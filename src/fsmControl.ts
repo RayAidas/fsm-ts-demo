@@ -7,7 +7,8 @@ export default class FsmControl extends FsmSystem {
     this.changeState(State.Mining);
   }
 
-  public onIdleExit(){
+  public onIdleExit(cur:string,pre:string){
+    console.log(cur,pre)
     console.log('exit idle')
   }
 
@@ -49,8 +50,6 @@ export default class FsmControl extends FsmSystem {
   }
 
   public update() {
-    // 更新状态机时间
-    if (this.paused) return
     if (this._currentState != null) {
       this.duration += 1;
       if (this[`on${this._currentState}Update`]) {

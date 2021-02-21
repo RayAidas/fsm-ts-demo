@@ -6,6 +6,7 @@ export const State = {
   Upgrade: 'Upgrade',
   Repair: 'Repair',
   Attack: 'Attack',
-  Heal: 'Heal'
+  Heal: 'Heal',
+  Pause: 'Pause'
 }
 

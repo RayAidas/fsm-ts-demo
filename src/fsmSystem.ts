@@ -4,7 +4,6 @@ export class FsmSystem {
   public _preState: string = "";
   /**当前状态的运行时间 */
   public duration: number = 0;
-  public paused: boolean = false
 
   /**当前状态机的状态 */
   public get currentState(): string {
@@ -25,9 +24,9 @@ export class FsmSystem {
     if (_tmpState == null) {
       this.stateList.push(state);
       //如果是第一个添加的状态，那就是当前的初始状态
-      if (this.stateList.length == 1) {
-        this._currentState = state;
-      }
+      // if (this.stateList.length == 1) {
+      //   this._currentState = state;
+      // }
     }
     else {
       console.warn(`FSM：该状态[${state}]已经被添加！`);
@@ -80,6 +79,7 @@ export class FsmSystem {
    * @param state 
    */
   public changeState(state: string = this._preState) {
+    if(state == this._currentState) return;
     let _tmpState: string = this.getState(state);       
     
     //要改变的状态不存在
