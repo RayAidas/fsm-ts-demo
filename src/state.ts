@@ -5,6 +5,7 @@ export const State = {
   Build: 'Build',
   Upgrade: 'Upgrade',
   Repair: 'Repair',
+  Charge:'Charge',
   Attack: 'Attack',
   Heal: 'Heal',
   Pause: 'Pause'
